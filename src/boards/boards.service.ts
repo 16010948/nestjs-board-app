@@ -8,11 +8,11 @@ import { Board } from './board.entity';
 export class BoardsService {
   constructor(private readonly boardRepository: BoardRepository) {}
 
-  getAllBoards(): Promise<Board[]> {
+  async getAllBoards(): Promise<Board[]> {
     return this.boardRepository.find();
   }
 
-  createBoard(createBoardDto: CreateBoardDto): Promise<Board> {
+  async createBoard(createBoardDto: CreateBoardDto): Promise<Board> {
     console.log(this.boardRepository);
     return this.boardRepository.createBoard(createBoardDto);
   }
